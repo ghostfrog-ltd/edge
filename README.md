@@ -1,59 +1,142 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Ghostfrog Ebay Edge
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Ghostfrog Ebay Edge is an early-stage SaaS product for eBay sellers. It is designed to scan a keyword or niche, compare competitor listings, and return a structured report showing missing attributes, weak spots, and practical listing actions.
 
-## About Laravel
+This repository currently contains the Laravel application, public marketing pages, customer workspace, and operator admin area. The Python analysis service is planned next and will plug into the scan pipeline that already exists in the app shell.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Current Product Shape
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- Public landing page with branding, footer, SEO metadata, sitemap, `robots.txt`, and `llms.txt`
+- Public information pages:
+  - `How It Works`
+  - `Terms and Conditions`
+  - `Privacy Policy`
+  - `Contact`
+- Authentication with Laravel Jetstream, Livewire, and Teams
+- Customer dashboard
+- Scan intake flow
+- Scan history and scan detail pages
+- Credit ledger model and starter credit flow
+- Admin area with:
+  - dashboard
+  - roadmap
+  - users
+  - teams
+  - scans
+  - credits
+  - products
+  - plans
+- Light and dark theme support
+- Custom Ghostfrog branding and favicon
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Stack
 
-## Learning Laravel
+- PHP 8.2+
+- Laravel 12
+- Jetstream with Livewire and Teams
+- Tailwind CSS
+- Vite
+- SQLite for local development right now
+- Planned Python/FastAPI analysis service
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+## Local Development
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+This project has been set up to run well with Laravel Herd.
 
-## Laravel Sponsors
+### 1. Install dependencies
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+```bash
+composer install
+npm install
+```
 
-### Premium Partners
+### 2. Create environment file
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+```bash
+cp .env.example .env
+php artisan key:generate
+```
 
-## Contributing
+### 3. Prepare the database
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+```bash
+touch database/database.sqlite
+php artisan migrate
+```
 
-## Code of Conduct
+### 4. Run the app
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+If you use Herd, link and secure the project directory, then open:
 
-## Security Vulnerabilities
+- [https://ghostfrog-ebay-edge.test](https://ghostfrog-ebay-edge.test)
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Otherwise you can run it locally with:
 
-## License
+```bash
+composer run dev
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+That starts:
+
+- the Laravel app server
+- the queue listener
+- the log tail
+- the Vite dev server
+
+## Useful Commands
+
+```bash
+php artisan test
+npm run build
+php artisan migrate
+php artisan optimize:clear
+```
+
+## Important App Areas
+
+- Public homepage: `/`
+- How it works: `/how-it-works`
+- Dashboard: `/dashboard`
+- New scan: `/scans/new`
+- Scan history: `/scans`
+- Admin dashboard: `/admin`
+- Admin roadmap: `/admin/roadmap`
+
+## Admin Notes
+
+The app has a separate platform admin concept in addition to Jetstream team roles.
+
+- Jetstream roles manage a user inside their team/workspace
+- platform admin is for operating the whole Ghostfrog app
+
+The current admin area is intended to support:
+
+- customer support
+- scan operations
+- credit visibility
+- roadmap tracking
+- future billing and worker monitoring
+
+## What Is Still Missing
+
+These are the major next steps after the current Laravel shell:
+
+- real billing and plan enforcement
+- credit top-ups
+- Python/FastAPI bridge
+- queue-driven scan processing
+- report generation from Python back into Laravel
+- LLM-assisted analysis over structured marketplace evidence
+- notifications when scans complete
+
+## Deployment Direction
+
+The likely hosting direction is:
+
+- local development with Herd
+- low-cost production deployment on Hetzner
+- Laravel app, queue worker, scheduler, and Python service initially sharing one server
+
+## Status
+
+This is an active build, not a finished product. The app already looks and behaves like a real SaaS shell, but the core Python analysis brain and billing flow are still to come.
