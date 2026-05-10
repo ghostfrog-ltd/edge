@@ -104,6 +104,8 @@ The public-facing version of this lives in the app's "Tasks and delivery status"
 ### Remote launch
 
 - `Next` Point the production domain and add the first real Nginx vhost
+- `Complete` Point `fuzzynode.com` at the first VPS and enable Let's Encrypt TLS
+- `Complete` Prepare a GitHub deploy-key flow for pulling production code onto the server
 - `Next` Deploy the Ghostfrog codebase onto the VPS
 - `Next` Create the production database and `.env`
 - `Next` Enable the Laravel queue worker, scheduler, and Python engine services for Ghostfrog

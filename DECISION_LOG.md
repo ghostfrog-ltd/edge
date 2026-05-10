@@ -97,3 +97,21 @@ This file tracks active decisions so the project keeps its context over time.
 - Why: Early traffic is expected to be low across a small number of sites, so a simple stack is cheaper and easier to debug.
 - Impact: Each app can be hosted under `/var/www`, with app-specific Nginx vhosts and optional queue/worker services.
 - Related: `docs/deployment/production-checklist.md`, `deploy/`, remote host `91.99.113.93`
+
+## 2026-05-10 - Fuzzynode domain and TLS are live on the first VPS
+
+- Status: active
+- Area: ops
+- Decision: `fuzzynode.com` now points at the first VPS, `www.fuzzynode.com` is the preferred public host, and TLS is handled with Let's Encrypt on the origin.
+- Why: This gives us a real public entrypoint and a stable production base before the Ghostfrog app code is deployed.
+- Impact: The server is ready to swap from the holding page to the live Laravel app as soon as the repo is pulled and configured.
+- Related: remote host `91.99.113.93`, `/etc/nginx/sites-available/fuzzynode.com.conf`, Let's Encrypt cert for `fuzzynode.com`
+
+## 2026-05-10 - Production code will be pulled from GitHub with a server deploy key
+
+- Status: active
+- Area: ops
+- Decision: The production server will access the GitHub repo using a dedicated SSH deploy key stored under the `deploy` user.
+- Why: This keeps deployment simple and avoids copying app code to the server manually.
+- Impact: App deployment should use `git clone` and later `git pull` from the server.
+- Related: `/home/deploy/.ssh/id_github_deploy`, GitHub repo deploy keys
