@@ -88,3 +88,12 @@ This file tracks active decisions so the project keeps its context over time.
 - Why: Profitability depends more on retention and report quality than on the app shell itself.
 - Impact: Customer testing, category focus, and report QA should stay high priority.
 - Related: `engine/app/reporting.py`, `app/Services/Ebay/`, `resources/views/scans/show.blade.php`
+
+## 2026-05-10 - First remote hosting box uses a simple Ubuntu VPS stack
+
+- Status: active
+- Area: ops
+- Decision: The first remote server uses a simple Ubuntu VPS with Nginx, PHP-FPM, MariaDB, per-site vhosts, and systemd services where needed instead of a heavier container control plane.
+- Why: Early traffic is expected to be low across a small number of sites, so a simple stack is cheaper and easier to debug.
+- Impact: Each app can be hosted under `/var/www`, with app-specific Nginx vhosts and optional queue/worker services.
+- Related: `docs/deployment/production-checklist.md`, `deploy/`, remote host `91.99.113.93`

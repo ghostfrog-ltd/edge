@@ -70,6 +70,7 @@ The public-facing version of this lives in the app's "Tasks and delivery status"
 - `Complete` Python engine sidecar in local development
 - `Complete` Internal service-to-service networking fixes for OrbStack proxy behavior
 - `Complete` Production deployment templates in `deploy/` and `docs/deployment/`
+- `Complete` First Ubuntu VPS bootstrap with Nginx, PHP 8.4, MariaDB, swap, firewall, fail2ban, deploy user, and multi-site Nginx template
 
 ## In Progress
 
@@ -99,6 +100,14 @@ The public-facing version of this lives in the app's "Tasks and delivery status"
 - `Next` Build a concrete path to the first 10 to 20 paying customers
 - `Next` Decide whether the primary wedge is solo power sellers, agencies, or team-based operators
 - `Next` Turn strong example reports into marketing proof
+
+### Remote launch
+
+- `Next` Point the production domain and add the first real Nginx vhost
+- `Next` Deploy the Ghostfrog codebase onto the VPS
+- `Next` Create the production database and `.env`
+- `Next` Enable the Laravel queue worker, scheduler, and Python engine services for Ghostfrog
+- `Next` Add SSL and validate the live app end to end
 
 ## Later
 
