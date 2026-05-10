@@ -7,13 +7,20 @@
                     {{ $team->name }}
                 </h2>
             </div>
-
-            <a
-                href="{{ route('scans.create') }}"
-                class="inline-flex items-center rounded-full bg-slate-900 px-5 py-2 text-sm font-semibold text-white transition hover:bg-orange-600"
-            >
-                Queue a scan
-            </a>
+            <div class="flex items-center gap-3">
+                <a
+                    href="{{ route('billing.index') }}"
+                    class="inline-flex items-center rounded-full border border-orange-500 bg-orange-500 px-5 py-2 text-sm font-semibold text-slate-950 transition duration-200 hover:scale-105 hover:border-black hover:bg-black hover:text-white hover:shadow-lg hover:shadow-black/20 dark:hover:border-white dark:hover:bg-white dark:hover:text-slate-950 dark:hover:shadow-white/20"
+                >
+                    Billing
+                </a>
+                <a
+                    href="{{ route('scans.create') }}"
+                    class="inline-flex items-center rounded-full border border-orange-500 bg-orange-500 px-5 py-2 text-sm font-semibold text-slate-950 transition duration-200 hover:scale-105 hover:border-black hover:bg-black hover:text-white hover:shadow-lg hover:shadow-black/20 dark:hover:border-white dark:hover:bg-white dark:hover:text-slate-950 dark:hover:shadow-white/20"
+                >
+                    Queue a scan
+                </a>
+            </div>
         </div>
     </x-slot>
 
@@ -26,23 +33,23 @@
             @endif
 
             <div>
-                <section class="rounded-[2rem] bg-slate-950 p-8 text-white shadow-xl">
-                    <p class="text-sm font-semibold uppercase tracking-[0.3em] text-orange-300">Workspace snapshot</p>
+                <section class="rounded-[2rem] border border-slate-200 bg-white p-8 text-slate-900 shadow-sm dark:border-slate-800 dark:bg-slate-950 dark:text-white dark:shadow-xl">
+                    <p class="text-sm font-semibold uppercase tracking-[0.3em] text-orange-600 dark:text-orange-300">Workspace snapshot</p>
                     <div class="mt-8 grid gap-4 md:grid-cols-3">
-                        <div class="rounded-[1.5rem] border border-white/10 bg-white/5 p-5">
-                            <p class="text-sm text-slate-300">Available credits</p>
-                            <p class="mt-3 text-4xl font-semibold">{{ $team->credit_balance }}</p>
-                            <p class="mt-2 text-sm text-slate-400">Starter balance is live until Stripe top-ups arrive.</p>
+                        <div class="rounded-[1.5rem] border border-slate-200 bg-slate-50 p-5 dark:border-white/10 dark:bg-white/5">
+                            <p class="text-sm text-slate-600 dark:text-slate-300">Available credits</p>
+                            <p class="mt-3 text-4xl font-semibold text-slate-900 dark:text-white">{{ $team->credit_balance }}</p>
+                            <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">Starter grants, Stripe plan credits, and top-ups all flow through the same ledger.</p>
                         </div>
-                        <div class="rounded-[1.5rem] border border-white/10 bg-white/5 p-5">
-                            <p class="text-sm text-slate-300">Queued or running</p>
-                            <p class="mt-3 text-4xl font-semibold">{{ $scanCounts['queued'] }}</p>
-                            <p class="mt-2 text-sm text-slate-400">This is the handoff lane for the future Python brain.</p>
+                        <div class="rounded-[1.5rem] border border-slate-200 bg-slate-50 p-5 dark:border-white/10 dark:bg-white/5">
+                            <p class="text-sm text-slate-600 dark:text-slate-300">Queued or running</p>
+                            <p class="mt-3 text-4xl font-semibold text-slate-900 dark:text-white">{{ $scanCounts['queued'] }}</p>
+                            <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">This is the handoff lane for the future Python brain.</p>
                         </div>
-                        <div class="rounded-[1.5rem] border border-white/10 bg-white/5 p-5">
-                            <p class="text-sm text-slate-300">Completed scans</p>
-                            <p class="mt-3 text-4xl font-semibold">{{ $scanCounts['completed'] }}</p>
-                            <p class="mt-2 text-sm text-slate-400">Reports will land here once the analysis service is wired.</p>
+                        <div class="rounded-[1.5rem] border border-slate-200 bg-slate-50 p-5 dark:border-white/10 dark:bg-white/5">
+                            <p class="text-sm text-slate-600 dark:text-slate-300">Completed scans</p>
+                            <p class="mt-3 text-4xl font-semibold text-slate-900 dark:text-white">{{ $scanCounts['completed'] }}</p>
+                            <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">Reports will land here once the analysis service is wired.</p>
                         </div>
                     </div>
                 </section>

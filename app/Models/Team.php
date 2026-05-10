@@ -8,11 +8,13 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Laravel\Jetstream\Events\TeamCreated;
 use Laravel\Jetstream\Events\TeamDeleted;
 use Laravel\Jetstream\Events\TeamUpdated;
+use Laravel\Cashier\Billable;
 use Laravel\Jetstream\Team as JetstreamTeam;
 
 class Team extends JetstreamTeam
 {
     /** @use HasFactory<TeamFactory> */
+    use Billable;
     use HasFactory;
 
     /**
@@ -23,6 +25,10 @@ class Team extends JetstreamTeam
     protected $fillable = [
         'name',
         'personal_team',
+        'stripe_id',
+        'pm_type',
+        'pm_last_four',
+        'trial_ends_at',
     ];
 
     /**
@@ -45,6 +51,7 @@ class Team extends JetstreamTeam
     {
         return [
             'personal_team' => 'boolean',
+            'trial_ends_at' => 'datetime',
         ];
     }
 
@@ -61,5 +68,15 @@ class Team extends JetstreamTeam
     public function getCreditBalanceAttribute(): int
     {
         return (int) $this->creditLedgers()->sum('amount');
+    }
+
+    public function stripeName(): ?string
+    {
+        return $this->name;
+    }
+
+    public function stripeEmail(): ?string
+    {
+        return $this->owner?->email;
     }
 }

@@ -17,8 +17,8 @@ class BriefPageTest extends TestCase
         $response->assertSee('How Ghostfrog works');
         $response->assertSee('Tasks and delivery status');
         $response->assertSee('Complete');
-        $response->assertSee('Pending');
         $response->assertSee('How Ghostfrog Works | Ghostfrog Ebay Edge', false);
         $response->assertSee('What one credit buys');
+        $response->assertSee('Human end-to-end system test plan');
     }
 }

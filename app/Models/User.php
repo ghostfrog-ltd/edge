@@ -81,4 +81,14 @@ class User extends Authenticatable
     {
         return $this->hasMany(CreditLedger::class);
     }
+
+    public function inboxNotifications(): HasMany
+    {
+        return $this->hasMany(InboxNotification::class);
+    }
+
+    public function unreadInboxNotifications(): HasMany
+    {
+        return $this->inboxNotifications()->whereNull('read_at');
+    }
 }

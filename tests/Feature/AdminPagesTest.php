@@ -6,6 +6,7 @@ use App\Models\CreditLedger;
 use App\Models\Team;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Support\Facades\Http;
 use Tests\TestCase;
 
 class AdminPagesTest extends TestCase
@@ -14,6 +15,21 @@ class AdminPagesTest extends TestCase
 
     public function test_admin_user_can_view_admin_dashboard_and_roadmap(): void
     {
+        Http::fake([
+            'http://127.0.0.1:8001/health' => Http::response([
+                'ok' => true,
+                'version' => '0.2.0',
+                'configured_provider' => 'gemini',
+                'configured_model' => 'gemini-2.5-flash',
+                'active_jobs' => 0,
+                'dispatches_total' => 4,
+                'callbacks_completed' => 4,
+                'callbacks_failed' => 0,
+                'uptime_seconds' => 120,
+                'simulated_delay_seconds' => 1.5,
+            ]),
+        ]);
+
         $admin = User::factory()->create([
             'is_admin' => true,
         ]);
@@ -36,12 +52,20 @@ class AdminPagesTest extends TestCase
         $this->actingAs($admin)
             ->get(route('admin.dashboard'))
             ->assertOk()
-            ->assertSee('Platform dashboard');
+            ->assertSee('Platform dashboard')
+            ->assertSee('Engine and queue monitoring')
+            ->assertSee('Human test plan');
 
         $this->actingAs($admin)
             ->get(route('admin.roadmap'))
             ->assertOk()
             ->assertSee('Operator roadmap');
+
+        $this->actingAs($admin)
+            ->get(route('admin.test-plan'))
+            ->assertOk()
+            ->assertSee('Human test plan')
+            ->assertSee('Scan to report loop');
     }
 
     public function test_non_admin_user_cannot_access_admin_pages(): void

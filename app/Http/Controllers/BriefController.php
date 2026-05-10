@@ -31,6 +31,96 @@ class BriefController extends Controller
                     'description' => 'We are selling market intelligence, not compliance advice, which keeps the product safer and clearer.',
                 ],
             ],
+            'concretePlan' => [
+                'intro' => "To finalize the product's core loop, this is the exact definition of what the user provides and what the system returns.",
+                'inputs' => [
+                    [
+                        'title' => 'Keyword/Niche',
+                        'detail' => 'A specific product or category they want to compete in.',
+                        'example' => 'Vintage Leather Watch Straps',
+                    ],
+                    [
+                        'title' => 'eBay Category ID',
+                        'detail' => 'A numerical eBay category for a specific department.',
+                        'example' => 'Category 179753 for Motorcycle Parts',
+                    ],
+                    [
+                        'title' => 'Competitor Store URL',
+                        'detail' => 'A direct link to a rival storefront to see what they are missing.',
+                        'example' => 'https://www.ebay.co.uk/str/rival-parts-store',
+                    ],
+                ],
+                'outputs' => [
+                    [
+                        'title' => 'The Missing 3',
+                        'detail' => 'Three high-impact, actionable things to add to the listing based on the live evidence, schema audit, and buyer-friction signals.',
+                    ],
+                    [
+                        'title' => 'Schema audit',
+                        'detail' => 'A list of specific Item Specific fields that eBay recommends or requires but top listings are still underusing.',
+                    ],
+                    [
+                    'title' => 'Voice of the Customer insights',
+                    'detail' => 'Pain points extracted from competitor descriptions and buyer-friction signals where shoppers keep needing reassurance or extra clarity.',
+                ],
+                    [
+                        'title' => 'Actionable implementation',
+                        'detail' => 'A clear how-to for the user to update their own listings and fill those gaps.',
+                    ],
+                    [
+                        'title' => 'Downloadable PDF report',
+                        'detail' => 'When a scan completes, the user should be able to download the report as a clean PDF for sharing, saving, or client delivery.',
+                    ],
+                ],
+                'examples' => [
+                    [
+                        'title' => 'Niche e-commerce',
+                        'input' => 'Handmade Wooden Educational Toys',
+                        'edge' => [
+                            'Missing field: CE/UKCA safety certification number. Top sellers are only mentioning it in text, so adding the dedicated field creates a trust and compliance edge.',
+                            'Buyer demand: Real-world scale photos. Reviews show buyers are often surprised by the small size, so adding a photo with a reference object should lower return risk.',
+                            'Technical gap: Material origin. Naming the exact wood type such as beech versus pine helps appeal to eco-conscious buyers.',
+                        ],
+                    ],
+                    [
+                        'title' => 'High-value electronics',
+                        'input' => 'Refurbished Apple iPad Pro 12.9 5th Gen',
+                        'edge' => [
+                            'Missing field: Battery cycle count. Sellers often show battery health percentage, but buyers keep asking for cycle count to judge longevity.',
+                            'Buyer demand: Screen uniformity photos. Reviews show concern about white spots or bleed, so a pure white background photo gives an immediate trust edge.',
+                            'Technical gap: Original versus third-party charger. State the charger brand in a dedicated attribute instead of burying it in the description.',
+                        ],
+                    ],
+                    [
+                        'title' => 'Automotive parts',
+                        'input' => 'Honda PCX 125 Spares/Repair',
+                        'edge' => [
+                            'Missing field: Donor bike mileage. Buyers want a proxy for wear before purchasing internal or mechanical parts.',
+                            'Buyer demand: Close-up photos of spline or teeth wear. Complaints about rounded parts make macro shots a strong trust differentiator.',
+                            'Technical gap: Compatibility years. Use the latest eBay schema to list every fitment year instead of saying it fits most models.',
+                        ],
+                    ],
+                ],
+                'boundary' => 'This is the product: pure, high-value intelligence on how to win the eBay listing race. No ROI tracking and no inventory management.',
+            ],
+            'brainSteps' => [
+                [
+                    'title' => 'Step 1: Live listing evidence collection',
+                    'detail' => 'The brain fetches the first 50 relevant active eBay listings for the keyword or niche, constrained by marketplace and sharpened by the optional category ID and competitor store URL when provided.',
+                ],
+                [
+                    'title' => 'Step 2: Schema audit',
+                    'detail' => 'It pulls eBay taxonomy aspect guidance for the category and checks listing details to find required or recommended item specifics that top sellers are still underusing.',
+                ],
+                [
+                    'title' => 'Step 3: Intelligence gathering',
+                    'detail' => 'It reads competitor descriptions and buyer-friction signals to surface the reassurance points and unanswered questions buyers keep circling around.',
+                ],
+                [
+                    'title' => 'Step 4: The Gap Analysis',
+                    'detail' => 'It synthesizes the live evidence, schema audit, and buyer-friction signals into The Missing 3: three specific things to add to the listing in order to beat the current top sellers.',
+                ],
+            ],
             'tasks' => [
                 [
                     'title' => 'Laravel app scaffolded and running in Herd',
@@ -54,49 +144,83 @@ class BriefController extends Controller
                 ],
                 [
                     'title' => 'Stripe billing and top-ups',
-                    'detail' => 'Add subscriptions, top-up packs, and a proper billing screen for real credit purchases.',
-                    'complete' => false,
+                    'detail' => 'Stripe-backed team subscriptions, top-up packs, webhook-based credit fulfillment, and a billing screen are now wired into the workspace flow.',
+                    'complete' => true,
                 ],
                 [
                     'title' => 'Public pricing page',
                     'detail' => 'Explain subscription tiers, included scans, and credit top-up options before sign-up.',
-                    'complete' => false,
+                    'complete' => true,
                 ],
                 [
                     'title' => 'Help and support page',
                     'detail' => 'Give customers one place for FAQs, support guidance, and simple product explanations.',
-                    'complete' => false,
+                    'complete' => true,
+                ],
+                [
+                    'title' => 'Downloadable PDF reports',
+                    'detail' => 'Let customers export completed scan reports as a polished PDF they can save, share, or send to clients.',
+                    'complete' => true,
                 ],
                 [
                     'title' => 'Python brain pipeline',
-                    'detail' => 'Build the full analysis pipeline that picks up queued scans, reasons over marketplace evidence, and returns a real report to Laravel.',
-                    'complete' => false,
+                    'detail' => 'The Ghostfrog engine now runs the v1 loop end to end: live eBay evidence, schema audit, buyer-friction intelligence, The Missing 3 synthesis, LLM-backed ranking, notifications, PDF delivery, and worker monitoring.',
+                    'complete' => true,
                     'subtasks' => [
                         [
                             'title' => 'FastAPI bridge and callback contract',
-                            'complete' => false,
+                            'complete' => true,
                         ],
                         [
                             'title' => 'Queue worker and scan handoff',
-                            'complete' => false,
+                            'complete' => true,
+                        ],
+                        [
+                            'title' => 'Live eBay evidence collection for the top 50 listings',
+                            'complete' => true,
+                        ],
+                        [
+                            'title' => 'Schema audit against eBay item specifics guidance',
+                            'complete' => true,
+                        ],
+                        [
+                            'title' => 'Description-driven buyer-friction intelligence gathering',
+                            'complete' => true,
+                        ],
+                        [
+                            'title' => 'The Missing 3 synthesis layer',
+                            'complete' => true,
                         ],
                         [
                             'title' => 'LLM-driven gap analysis and ranking',
-                            'complete' => false,
+                            'complete' => true,
+                        ],
+                        [
+                            'title' => 'Report quality feedback loop and scoring',
+                            'complete' => true,
                         ],
                         [
                             'title' => 'First report write-back into Laravel',
-                            'complete' => false,
+                            'complete' => true,
                         ],
                         [
                             'title' => 'Worker health and monitoring',
-                            'complete' => false,
+                            'complete' => true,
                         ],
                         [
-                            'title' => 'Customer notification when a scan is ready',
-                            'complete' => false,
+                            'title' => 'Customer inbox notification when a scan is ready',
+                            'complete' => true,
+                        ],
+                        [
+                            'title' => 'Customer email notification when a scan is ready',
+                            'complete' => true,
                         ],
                     ],
+                ],
+                [
+                    'title' => 'Human end-to-end system test plan',
+                    'detail' => 'Before calling the product done, run a proper human test pass across sign-up, billing, scans, reports, inbox, email, PDF export, and admin flows so the whole system is checked outside of automated tests.',
+                    'complete' => true,
                 ],
             ],
         ]);

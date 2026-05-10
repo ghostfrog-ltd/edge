@@ -6,9 +6,10 @@
         </div>
 
         <div class="flex flex-wrap items-center gap-x-5 gap-y-2">
+            <a href="{{ route('pricing') }}" class="transition hover:text-orange-600">Pricing</a>
             <a href="{{ route('terms.show') }}" class="transition hover:text-orange-600">Terms</a>
             <a href="{{ route('policy.show') }}" class="transition hover:text-orange-600">Privacy</a>
-            <a href="{{ route('contact.show') }}" class="transition hover:text-orange-600">Contact</a>
+            <a href="{{ route('support.show') }}" class="transition hover:text-orange-600">Help & Support</a>
             <a href="{{ route('how-it-works') }}" class="transition hover:text-orange-600">How It Works</a>
             <a href="https://ghostfrog.co.uk/" class="font-medium text-orange-600 underline decoration-orange-300 underline-offset-4 transition hover:text-orange-500 hover:decoration-orange-500 dark:text-orange-300 dark:decoration-orange-500/60 dark:hover:text-orange-200 dark:hover:decoration-orange-300" target="_blank" rel="noopener noreferrer">Agentic Systems build By Ghostfrog</a>
         </div>

@@ -16,6 +16,7 @@ class CreditLedger extends Model
         'type',
         'amount',
         'description',
+        'reference',
     ];
 
     public function team(): BelongsTo

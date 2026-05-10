@@ -4,6 +4,11 @@ Ghostfrog Ebay Edge is an early-stage SaaS product for eBay sellers. It is desig
 
 This repository currently contains the Laravel application, public marketing pages, customer workspace, and operator admin area. The Python analysis service is planned next and will plug into the scan pipeline that already exists in the app shell.
 
+## Project Memory
+
+- [DECISION_LOG.md](/Volumes/Bob/www/ghostfrog-ebay-edge/DECISION_LOG.md): the running record of key product, technical, pricing, and ops decisions
+- [ACTION_PLAN.md](/Volumes/Bob/www/ghostfrog-ebay-edge/ACTION_PLAN.md): the repo-side action plan and delivery status tracker
+
 ## Current Product Shape
 
 - Public landing page with branding, footer, SEO metadata, sitemap, `robots.txt`, and `llms.txt`
@@ -36,60 +41,78 @@ This repository currently contains the Laravel application, public marketing pag
 - Jetstream with Livewire and Teams
 - Tailwind CSS
 - Vite
-- SQLite for local development right now
+- DDEV on OrbStack for local development
+- MariaDB and Mailpit via DDEV
 - Planned Python/FastAPI analysis service
 
 ## Local Development
 
-This project has been set up to run well with Laravel Herd.
+This project is set up for DDEV running on OrbStack.
 
-### 1. Install dependencies
+### 1. Start OrbStack and DDEV
+
+Open OrbStack on macOS, then make sure Docker is pointing at it:
 
 ```bash
-composer install
-npm install
+docker context use orbstack
+ddev start
 ```
 
-### 2. Create environment file
+### 2. Install dependencies
+
+```bash
+ddev composer install
+ddev npm install
+```
+
+### 3. Create environment file
 
 ```bash
 cp .env.example .env
-php artisan key:generate
+ddev php artisan key:generate
 ```
 
-### 3. Prepare the database
+### 4. Prepare the database
 
 ```bash
-touch database/database.sqlite
-php artisan migrate
+ddev php artisan migrate
 ```
 
-### 4. Run the app
+### 5. Run the app
 
-If you use Herd, link and secure the project directory, then open:
+Open:
 
-- [https://ghostfrog-ebay-edge.test](https://ghostfrog-ebay-edge.test)
+- [https://ghostfrog-ebay-edge.ddev.site](https://ghostfrog-ebay-edge.ddev.site)
 
-Otherwise you can run it locally with:
+For day-to-day development, use separate terminals for Vite and the queue listener:
 
 ```bash
-composer run dev
+ddev vite
+ddev queue
 ```
 
-That starts:
+The FastAPI engine runs as a DDEV sidecar service and is reachable from Laravel at:
 
-- the Laravel app server
-- the queue listener
-- the log tail
-- the Vite dev server
+- `http://engine:8001`
+
+You can check its health with:
+
+```bash
+ddev exec curl -s http://engine:8001/health
+```
+
+When `ddev vite` is running, Vite HMR is exposed through:
+
+- [https://ghostfrog-ebay-edge.ddev.site:5173](https://ghostfrog-ebay-edge.ddev.site:5173)
 
 ## Useful Commands
 
 ```bash
-php artisan test
-npm run build
-php artisan migrate
-php artisan optimize:clear
+ddev php artisan test
+ddev npm run build
+ddev php artisan migrate
+ddev php artisan optimize:clear
+ddev exec --service=engine python -m unittest discover -s tests -t /var/www/html/engine
 ```
 
 ## Important App Areas
@@ -133,9 +156,14 @@ These are the major next steps after the current Laravel shell:
 
 The likely hosting direction is:
 
-- local development with Herd
+- local development with OrbStack and DDEV
 - low-cost production deployment on Hetzner
 - Laravel app, queue worker, scheduler, and Python service initially sharing one server
+
+Deployment templates now live in:
+
+- `docs/deployment/production-checklist.md`
+- `deploy/`
 
 ## Status
 

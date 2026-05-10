@@ -5,7 +5,7 @@
                 <p class="text-xs font-semibold uppercase tracking-[0.3em] text-orange-600 dark:text-orange-300">Admin</p>
                 <h2 class="mt-5 text-2xl font-semibold leading-tight text-slate-900 dark:text-white">Scans</h2>
             </div>
-            <a href="{{ route('admin.dashboard') }}" class="inline-flex items-center rounded-full bg-slate-900 px-5 py-2 text-sm font-semibold text-white transition hover:bg-orange-600 dark:bg-orange-500 dark:text-slate-950 dark:hover:bg-orange-400">Back to admin</a>
+            <a href="{{ route('admin.dashboard') }}" class="inline-flex items-center rounded-full border border-orange-500 bg-orange-500 px-5 py-2 text-sm font-semibold text-slate-950 transition duration-200 hover:scale-105 hover:border-black hover:bg-black hover:text-white hover:shadow-lg hover:shadow-black/20 dark:hover:border-white dark:hover:bg-white dark:hover:text-slate-950 dark:hover:shadow-white/20">Back to admin</a>
         </div>
     </x-slot>
 
@@ -27,7 +27,7 @@
                     <table class="min-w-full divide-y divide-slate-200 dark:divide-slate-800">
                         <thead class="bg-slate-50 dark:bg-slate-800">
                             <tr class="text-left text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
-                                <th class="px-6 py-4">Keyword</th>
+                                <th class="px-6 py-4">Trigger</th>
                                 <th class="px-6 py-4">Team</th>
                                 <th class="px-6 py-4">User</th>
                                 <th class="px-6 py-4">Status</th>
@@ -37,7 +37,10 @@
                         <tbody class="divide-y divide-slate-200 bg-white dark:divide-slate-800 dark:bg-slate-900">
                             @forelse ($scans as $scan)
                                 <tr class="text-sm text-slate-600 dark:text-slate-300">
-                                    <td class="px-6 py-4 font-semibold text-slate-900 dark:text-white">{{ $scan->keyword }}</td>
+                                    <td class="px-6 py-4">
+                                        <p class="font-semibold text-slate-900 dark:text-white">{{ $scan->triggerLabel() }}</p>
+                                        <p class="mt-1 text-xs uppercase tracking-[0.2em] text-slate-400 dark:text-slate-500">{{ str_replace('_', ' ', $scan->scan_type ?? 'keyword') }}</p>
+                                    </td>
                                     <td class="px-6 py-4">{{ $scan->team->name }}</td>
                                     <td class="px-6 py-4">{{ $scan->user->name }}</td>
                                     <td class="px-6 py-4"><span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-slate-600 dark:bg-slate-800 dark:text-slate-300">{{ $scan->status }}</span></td>

@@ -60,17 +60,23 @@
                 </a>
 
                 <nav class="flex items-center gap-3 text-sm font-semibold">
+                    <a href="{{ route('pricing') }}" class="rounded-full px-4 py-2 text-slate-600 transition hover:bg-white/70 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-slate-800/80 dark:hover:text-white">
+                        Pricing
+                    </a>
                     <a href="{{ route('how-it-works') }}" class="rounded-full px-4 py-2 text-slate-600 transition hover:bg-white/70 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-slate-800/80 dark:hover:text-white">
                         How It Works
                     </a>
-                    <a href="{{ route('contact.show') }}" class="rounded-full px-4 py-2 text-slate-600 transition hover:bg-white/70 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-slate-800/80 dark:hover:text-white">
-                        Contact
+                    <a href="{{ route('support.show') }}" class="rounded-full px-4 py-2 text-slate-600 transition hover:bg-white/70 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-slate-800/80 dark:hover:text-white">
+                        Help & Support
                     </a>
                     @auth
                         <a href="{{ route('dashboard') }}" class="rounded-full bg-slate-900 px-5 py-2.5 text-white transition hover:bg-orange-600 dark:bg-orange-500 dark:text-slate-950 dark:hover:bg-orange-400">
                             Dashboard
                         </a>
                     @else
+                        <a href="{{ route('register') }}" class="inline-flex items-center rounded-full border border-orange-500 bg-orange-500 px-5 py-2 text-sm font-semibold text-slate-950 transition duration-200 hover:scale-105 hover:border-black hover:bg-black hover:text-white hover:shadow-lg hover:shadow-black/20 dark:hover:border-white dark:hover:bg-white dark:hover:text-slate-950 dark:hover:shadow-white/20">
+                            Create Account
+                        </a>
                         <a href="{{ route('login') }}" class="rounded-full bg-slate-900 px-5 py-2.5 text-white transition hover:bg-orange-600 dark:bg-orange-500 dark:text-slate-950 dark:hover:bg-orange-400">
                             Log In
                         </a>
@@ -101,6 +107,9 @@
                                     Create Account
                                 </a>
                             @endauth
+                            <a href="{{ route('pricing') }}" class="rounded-full border border-slate-300 bg-white/80 px-6 py-3 text-sm font-semibold text-slate-700 transition hover:border-orange-300 hover:text-orange-700 dark:border-slate-700 dark:bg-slate-900/80 dark:text-slate-200 dark:hover:border-orange-400 dark:hover:text-orange-300">
+                                View Pricing
+                            </a>
                             <a href="{{ route('how-it-works') }}" class="rounded-full border border-slate-300 bg-white/80 px-6 py-3 text-sm font-semibold text-slate-700 transition hover:border-orange-300 hover:text-orange-700 dark:border-slate-700 dark:bg-slate-900/80 dark:text-slate-200 dark:hover:border-orange-400 dark:hover:text-orange-300">
                                 See How It Works
                             </a>
@@ -125,25 +134,25 @@
                     <div class="relative">
                         <div class="absolute inset-0 rounded-[2.5rem] bg-orange-500/20 blur-3xl dark:bg-orange-400/15"></div>
                         <div class="relative rounded-[2.5rem] border border-white/70 bg-white/85 p-6 shadow-2xl backdrop-blur dark:border-slate-800 dark:bg-slate-900/85">
-                            <div class="rounded-[2rem] bg-slate-950 p-6 text-white">
-                                <p class="text-sm font-semibold uppercase tracking-[0.3em] text-orange-300">Example scan</p>
-                                <h2 class="mt-4 text-3xl font-semibold">lego castle byers</h2>
-                                <p class="mt-3 text-sm leading-7 text-slate-300">
+                            <div class="rounded-[2rem] border border-slate-200 bg-white p-6 text-slate-900 dark:border-slate-800 dark:bg-slate-950 dark:text-white">
+                                <p class="text-sm font-semibold uppercase tracking-[0.3em] text-orange-600 dark:text-orange-300">Example scan</p>
+                                <h2 class="mt-4 text-3xl font-semibold text-slate-900 dark:text-white">lego castle byers</h2>
+                                <p class="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">
                                     Python gathers marketplace evidence, structured code compares attributes, and the LLM highlights the gaps worth acting on.
                                 </p>
 
                                 <div class="mt-6 space-y-3">
-                                    <div class="rounded-[1.5rem] border border-white/10 bg-white/5 p-4">
-                                        <p class="text-xs uppercase tracking-[0.25em] text-slate-400">Missing attributes</p>
-                                        <p class="mt-2 text-base font-semibold">Condition details, box completeness, minifigure count</p>
+                                    <div class="rounded-[1.5rem] border border-slate-200 bg-slate-50 p-4 dark:border-white/10 dark:bg-white/5">
+                                        <p class="text-xs uppercase tracking-[0.25em] text-slate-500 dark:text-slate-400">Missing attributes</p>
+                                        <p class="mt-2 text-base font-semibold text-slate-900 dark:text-white">Condition details, box completeness, minifigure count</p>
                                     </div>
-                                    <div class="rounded-[1.5rem] border border-white/10 bg-white/5 p-4">
-                                        <p class="text-xs uppercase tracking-[0.25em] text-slate-400">Weak competitor signal</p>
-                                        <p class="mt-2 text-base font-semibold">Top listings mention sealed bags and manual condition more consistently.</p>
+                                    <div class="rounded-[1.5rem] border border-slate-200 bg-slate-50 p-4 dark:border-white/10 dark:bg-white/5">
+                                        <p class="text-xs uppercase tracking-[0.25em] text-slate-500 dark:text-slate-400">Weak competitor signal</p>
+                                        <p class="mt-2 text-base font-semibold text-slate-900 dark:text-white">Top listings mention sealed bags and manual condition more consistently.</p>
                                     </div>
-                                    <div class="rounded-[1.5rem] border border-white/10 bg-orange-500/10 p-4">
-                                        <p class="text-xs uppercase tracking-[0.25em] text-orange-300">Recommended next action</p>
-                                        <p class="mt-2 text-base font-semibold">Rewrite the title and item specifics around completeness and display the count clearly.</p>
+                                    <div class="rounded-[1.5rem] border border-orange-200 bg-orange-50 p-4 dark:border-white/10 dark:bg-orange-500/10">
+                                        <p class="text-xs uppercase tracking-[0.25em] text-orange-700 dark:text-orange-300">Recommended next action</p>
+                                        <p class="mt-2 text-base font-semibold text-slate-900 dark:text-white">Rewrite the title and item specifics around completeness and display the count clearly.</p>
                                     </div>
                                 </div>
                             </div>

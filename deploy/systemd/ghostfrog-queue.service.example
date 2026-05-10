@@ -1,0 +1,16 @@
+[Unit]
+Description=Ghostfrog Laravel Queue Worker
+After=network.target postgresql.service
+
+[Service]
+Type=simple
+User=deploy
+Group=www-data
+WorkingDirectory=/var/www/ghostfrog
+EnvironmentFile=/var/www/ghostfrog/.env
+ExecStart=/usr/bin/php artisan queue:work --sleep=3 --tries=1 --timeout=120
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

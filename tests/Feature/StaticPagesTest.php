@@ -24,9 +24,9 @@ class StaticPagesTest extends TestCase
     {
         $this->get(route('contact.show'))
             ->assertOk()
-            ->assertSee('Get in touch')
-            ->assertSee('Contact Ghostfrog Ebay Edge', false)
-            ->assertSee('billing questions', false);
+            ->assertSee('Send a support request')
+            ->assertSee('Help &amp; Support | Ghostfrog Ebay Edge', false)
+            ->assertSee('billing issues', false);
     }
 
     public function test_sitemap_robots_and_llms_files_are_accessible(): void

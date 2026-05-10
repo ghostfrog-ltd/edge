@@ -19,6 +19,8 @@ class AdminScanListController extends Controller
                 $query->where(function ($builder) use ($search) {
                     $builder
                         ->where('keyword', 'like', "%{$search}%")
+                        ->orWhere('ebay_category_id', 'like', "%{$search}%")
+                        ->orWhere('competitor_store_url', 'like', "%{$search}%")
                         ->orWhereHas('team', fn ($team) => $team->where('name', 'like', "%{$search}%"))
                         ->orWhereHas('user', fn ($user) => $user->where('name', 'like', "%{$search}%"));
                 });

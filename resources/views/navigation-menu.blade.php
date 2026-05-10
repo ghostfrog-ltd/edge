@@ -2,10 +2,32 @@
     x-data="{
         open: false,
         darkMode: document.documentElement.classList.contains('dark'),
+        unreadNotifications: {{ Auth::user()->unreadInboxNotifications()->count() }},
         toggleTheme() {
             this.darkMode = window.ghostfrogTheme.toggle() === 'dark';
+        },
+        async refreshUnreadNotifications() {
+            try {
+                const response = await fetch('{{ route('notifications.unread-count') }}', {
+                    headers: {
+                        'Accept': 'application/json',
+                        'X-Requested-With': 'XMLHttpRequest',
+                    },
+                    credentials: 'same-origin',
+                });
+
+                if (! response.ok) {
+                    return;
+                }
+
+                const payload = await response.json();
+                this.unreadNotifications = payload.count ?? 0;
+            } catch (error) {
+                // Swallow polling errors silently for now.
+            }
         }
     }"
+    x-init="refreshUnreadNotifications(); setInterval(() => refreshUnreadNotifications(), 30000)"
     class="border-b border-slate-200 bg-white/90 backdrop-blur dark:border-slate-800 dark:bg-slate-900/90"
 >
     <!-- Primary Navigation Menu -->
@@ -23,6 +45,18 @@
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
+                    </x-nav-link>
+                    <x-nav-link href="{{ route('billing.index') }}" :active="request()->routeIs('billing.*')">
+                        {{ __('Billing') }}
+                    </x-nav-link>
+                    <x-nav-link href="{{ route('notifications.index') }}" :active="request()->routeIs('notifications.*')">
+                        {{ __('Inbox') }}
+                        <span
+                            x-cloak
+                            x-show="unreadNotifications > 0"
+                            x-text="unreadNotifications"
+                            class="ms-2 inline-flex min-w-5 items-center justify-center rounded-full bg-orange-500 px-1.5 py-0.5 text-[10px] font-semibold text-white"
+                        ></span>
                     </x-nav-link>
                     <x-nav-link href="{{ route('scans.create') }}" :active="request()->routeIs('scans.create')">
                         {{ __('New Scan') }}
@@ -180,6 +214,18 @@
         <div class="space-y-1 pt-2 pb-3">
             <x-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link href="{{ route('billing.index') }}" :active="request()->routeIs('billing.*')">
+                {{ __('Billing') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link href="{{ route('notifications.index') }}" :active="request()->routeIs('notifications.*')">
+                {{ __('Inbox') }}
+                <span
+                    x-cloak
+                    x-show="unreadNotifications > 0"
+                    x-text="unreadNotifications"
+                    class="ms-2 inline-flex min-w-5 items-center justify-center rounded-full bg-orange-500 px-1.5 py-0.5 text-[10px] font-semibold text-white"
+                ></span>
             </x-responsive-nav-link>
             <x-responsive-nav-link href="{{ route('scans.create') }}" :active="request()->routeIs('scans.create')">
                 {{ __('New Scan') }}

@@ -13,11 +13,11 @@
                         </h2>
                     </div>
                     @auth
-                        <a href="{{ route('scans.create') }}" class="inline-flex items-center rounded-full bg-slate-900 px-5 py-2 text-sm font-semibold text-white transition hover:bg-orange-600 dark:bg-orange-500 dark:text-slate-950 dark:hover:bg-orange-400">
+                        <a href="{{ route('scans.create') }}" class="inline-flex items-center rounded-full border border-orange-500 bg-orange-500 px-5 py-2 text-sm font-semibold text-slate-950 transition duration-200 hover:scale-105 hover:border-black hover:bg-black hover:text-white hover:shadow-lg hover:shadow-black/20 dark:hover:border-white dark:hover:bg-white dark:hover:text-slate-950 dark:hover:shadow-white/20">
                             Open scan intake
                         </a>
                     @else
-                        <a href="{{ route('register') }}" class="inline-flex items-center rounded-full bg-slate-900 px-5 py-2 text-sm font-semibold text-white transition hover:bg-orange-600 dark:bg-orange-500 dark:text-slate-950 dark:hover:bg-orange-400">
+                        <a href="{{ route('register') }}" class="inline-flex items-center rounded-full border border-orange-500 bg-orange-500 px-5 py-2 text-sm font-semibold text-slate-950 transition duration-200 hover:scale-105 hover:border-black hover:bg-black hover:text-white hover:shadow-lg hover:shadow-black/20 dark:hover:border-white dark:hover:bg-white dark:hover:text-slate-950 dark:hover:shadow-white/20">
                             Create account
                         </a>
                     @endauth
@@ -25,11 +25,11 @@
             </section>
 
             <section class="grid gap-6 lg:grid-cols-[1.4fr_0.9fr]">
-                <div class="rounded-[2rem] bg-slate-950 p-8 text-white shadow-xl">
-                    <p class="text-sm font-semibold uppercase tracking-[0.3em] text-orange-300">Mission</p>
-                    <h3 class="mt-4 text-3xl font-semibold leading-tight">Ghostfrog SaaS Factory</h3>
-                    <p class="mt-6 max-w-3xl text-base leading-8 text-slate-300">{{ $brief['mission'] }}</p>
-                    <p class="mt-4 max-w-3xl text-base leading-8 text-slate-300">{{ $brief['product'] }}</p>
+                <div class="rounded-[2rem] border border-slate-200 bg-white p-8 text-slate-900 shadow-sm dark:border-slate-800 dark:bg-slate-950 dark:text-white dark:shadow-xl">
+                    <p class="text-sm font-semibold uppercase tracking-[0.3em] text-orange-600 dark:text-orange-300">Mission</p>
+                    <h3 class="mt-4 text-3xl font-semibold leading-tight text-slate-900 dark:text-white">Ghostfrog SaaS Factory</h3>
+                    <p class="mt-6 max-w-3xl text-base leading-8 text-slate-600 dark:text-slate-300">{{ $brief['mission'] }}</p>
+                    <p class="mt-4 max-w-3xl text-base leading-8 text-slate-600 dark:text-slate-300">{{ $brief['product'] }}</p>
                 </div>
 
                 <div class="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm dark:border-slate-800 dark:bg-slate-900">
@@ -70,6 +70,74 @@
             <section class="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm dark:border-slate-800 dark:bg-slate-900">
                 <p class="text-sm font-semibold uppercase tracking-[0.3em] text-slate-500">How the brain works</p>
                 <p class="mt-4 max-w-5xl text-base leading-8 text-slate-600 dark:text-slate-300">{{ $brief['pythonBrainHow'] }}</p>
+            </section>
+
+            <section class="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+                <p class="text-sm font-semibold uppercase tracking-[0.3em] text-slate-500">Brain workflow</p>
+                <h3 class="mt-2 text-2xl font-semibold text-slate-900 dark:text-white">Step 1 / Step 2 / Step 3 / Step 4</h3>
+
+                <div class="mt-6 grid gap-4 lg:grid-cols-3">
+                    @foreach ($brainSteps as $step)
+                        <article class="rounded-[1.5rem] bg-slate-50 p-5 dark:bg-slate-800/80">
+                            <p class="text-base font-semibold text-slate-900 dark:text-white">{{ $step['title'] }}</p>
+                            <p class="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">{{ $step['detail'] }}</p>
+                        </article>
+                    @endforeach
+                </div>
+            </section>
+
+            <section class="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+                <p class="text-sm font-semibold uppercase tracking-[0.3em] text-slate-500">Concrete plan</p>
+                <h3 class="mt-2 text-2xl font-semibold text-slate-900 dark:text-white">This is the product loop</h3>
+                <p class="mt-4 max-w-5xl text-base leading-8 text-slate-600 dark:text-slate-300">{{ $concretePlan['intro'] }}</p>
+
+                <div class="mt-8 grid gap-6 lg:grid-cols-2">
+                    <article class="rounded-[1.5rem] bg-slate-50 p-6 dark:bg-slate-800/80">
+                        <p class="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400">1. User input</p>
+                        <div class="mt-4 space-y-4">
+                            @foreach ($concretePlan['inputs'] as $input)
+                                <div class="rounded-[1.25rem] border border-slate-200 bg-white p-4 dark:border-slate-700 dark:bg-slate-900">
+                                    <p class="text-base font-semibold text-slate-900 dark:text-white">{{ $input['title'] }}</p>
+                                    <p class="mt-2 text-sm leading-7 text-slate-600 dark:text-slate-300">{{ $input['detail'] }}</p>
+                                    <p class="mt-2 text-sm font-medium text-orange-700 dark:text-orange-300">{{ $input['example'] }}</p>
+                                </div>
+                            @endforeach
+                        </div>
+                    </article>
+
+                    <article class="rounded-[1.5rem] bg-slate-50 p-6 dark:bg-slate-800/80">
+                        <p class="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400">2. User output</p>
+                        <div class="mt-4 space-y-4">
+                            @foreach ($concretePlan['outputs'] as $output)
+                                <div class="rounded-[1.25rem] border border-slate-200 bg-white p-4 dark:border-slate-700 dark:bg-slate-900">
+                                    <p class="text-base font-semibold text-slate-900 dark:text-white">{{ $output['title'] }}</p>
+                                    <p class="mt-2 text-sm leading-7 text-slate-600 dark:text-slate-300">{{ $output['detail'] }}</p>
+                                </div>
+                            @endforeach
+                        </div>
+                    </article>
+                </div>
+
+                <div class="mt-8">
+                    <p class="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400">3. Concrete examples</p>
+                    <div class="mt-4 grid gap-4 lg:grid-cols-3">
+                        @foreach ($concretePlan['examples'] as $example)
+                            <article class="rounded-[1.5rem] border border-slate-200 bg-slate-50 p-5 dark:border-slate-700 dark:bg-slate-800/80">
+                                <p class="text-base font-semibold text-slate-900 dark:text-white">{{ $example['title'] }}</p>
+                                <p class="mt-3 text-sm font-medium text-orange-700 dark:text-orange-300">Input: {{ $example['input'] }}</p>
+                                <div class="mt-4 space-y-3 text-sm leading-7 text-slate-600 dark:text-slate-300">
+                                    @foreach ($example['edge'] as $point)
+                                        <p>{{ $point }}</p>
+                                    @endforeach
+                                </div>
+                            </article>
+                        @endforeach
+                    </div>
+                </div>
+
+                <div class="mt-8 rounded-[1.5rem] border border-orange-200 bg-orange-50 p-5 dark:border-orange-900 dark:bg-orange-500/10">
+                    <p class="text-base font-semibold text-slate-900 dark:text-white">{{ $concretePlan['boundary'] }}</p>
+                </div>
             </section>
 
             <section class="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm dark:border-slate-800 dark:bg-slate-900">
