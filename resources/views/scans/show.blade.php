@@ -134,7 +134,7 @@
                                 <div>
                                     <p class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400">Ranking and quality loop</p>
                                     <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">
-                                        {{ $scan->report->rankingRationale() ?? 'Ghostfrog ranks these gaps using the live eBay evidence, schema audit, and buyer-friction signals.' }}
+                                        {{ $scan->report->rankingRationale() ?? 'Fuzzynode ranks these gaps using the live eBay evidence, schema audit, and buyer-friction signals.' }}
                                     </p>
                                 </div>
                                 <span class="rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] {{ $scan->report->qualityLoopScore() >= 85 ? 'bg-emerald-100 text-emerald-700 dark:bg-emerald-500/20 dark:text-emerald-300' : ($scan->report->qualityLoopScore() >= 70 ? 'bg-orange-100 text-orange-700 dark:bg-orange-500/20 dark:text-orange-300' : 'bg-rose-100 text-rose-700 dark:bg-rose-500/20 dark:text-rose-300') }}">
@@ -306,7 +306,7 @@
                             </p>
                         @endif
                     @elseif (in_array($scan->status, ['queued', 'dispatching', 'processing'], true))
-                        <p class="mt-4 text-sm text-slate-600 dark:text-slate-300">Ghostfrog is fetching the top live listings from eBay for this scan.</p>
+                        <p class="mt-4 text-sm text-slate-600 dark:text-slate-300">Fuzzynode is fetching the top live listings from eBay for this scan.</p>
                     @elseif ($scan->status === 'completed')
                         <p class="mt-4 text-sm text-slate-600 dark:text-slate-300">No live eBay evidence was stored for this scan. That usually means it completed before Step 1 was enabled or the evidence fetch did not run.</p>
                     @else

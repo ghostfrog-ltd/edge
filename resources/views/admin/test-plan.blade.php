@@ -19,7 +19,7 @@
             <section class="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm dark:border-slate-800 dark:bg-slate-900">
                 <p class="text-sm font-semibold uppercase tracking-[0.3em] text-slate-500">Why this exists</p>
                 <p class="mt-4 max-w-4xl text-base leading-8 text-slate-600 dark:text-slate-300">
-                    This is the human final-pass checklist for Ghostfrog. It is here so we test the whole system the way a real customer and operator will experience it, not just the way automated tests see it.
+                    This is the human final-pass checklist for Fuzzynode. It is here so we test the whole system the way a real customer and operator will experience it, not just the way automated tests see it.
                 </p>
             </section>
 

@@ -23,7 +23,7 @@
 
             <section class="rounded-[2rem] border border-orange-200 bg-orange-50 p-6 shadow-sm dark:border-orange-500/30 dark:bg-orange-500/10">
                 <p class="text-sm leading-7 text-orange-900 dark:text-orange-100">
-                    This is the sellable pricing catalog for <span class="font-semibold">Ghostfrog Ebay Edge</span>. The public pricing page and the workspace billing page both read from the same data you edit here.
+                    This is the sellable pricing catalog for <span class="font-semibold">Fuzzynode Ebay Edge</span>. The public pricing page and the workspace billing page both read from the same data you edit here.
                 </p>
             </section>
 

@@ -3,7 +3,7 @@
         <div class="mx-auto flex max-w-6xl flex-col gap-6 px-6 py-16 lg:flex-row lg:items-end lg:justify-between">
             <div class="max-w-3xl">
                 <p class="text-xs font-semibold uppercase tracking-[0.3em] text-orange-600 dark:text-orange-300">Pricing</p>
-                <h1 class="mt-5 text-4xl font-semibold text-slate-900 dark:text-white sm:text-5xl">Choose the Ghostfrog plan that fits your eBay workflow.</h1>
+                <h1 class="mt-5 text-4xl font-semibold text-slate-900 dark:text-white sm:text-5xl">Choose the Fuzzynode plan that fits your eBay workflow.</h1>
                 <p class="mt-6 text-lg leading-8 text-slate-600 dark:text-slate-300">
                     Start with a lightweight plan, then add top-up credits whenever you need extra scans. The pricing page reads from the same admin-managed catalog the workspace billing screen uses.
                 </p>

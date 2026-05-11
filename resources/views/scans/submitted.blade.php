@@ -28,7 +28,7 @@
                     status: '{{ $scan->status }}',
                     pollUrl: '{{ route('scans.submitted-status', $scan) }}',
                     showUrl: '{{ route('scans.show', $scan) }}',
-                    message: 'Ghostfrog is gathering live eBay evidence, checking schema signals, and building your Missing 3.',
+                    message: 'Fuzzynode is gathering live eBay evidence, checking schema signals, and building your Missing 3.',
                     init() {
                         this.poll();
                         this.timer = setInterval(() => this.poll(), 5000);
@@ -78,13 +78,13 @@
                         </h3>
 
                         <p class="mt-5 max-w-3xl text-base leading-8 text-slate-600 dark:text-slate-300" x-text="message">
-                            Ghostfrog is gathering live eBay evidence, checking schema signals, and building your Missing 3.
+                            Fuzzynode is gathering live eBay evidence, checking schema signals, and building your Missing 3.
                         </p>
 
                         <div class="mt-6 rounded-[1.5rem] border border-orange-200 bg-orange-50 p-5 dark:border-orange-900 dark:bg-orange-500/10">
                             <p class="text-sm font-semibold uppercase tracking-[0.2em] text-orange-700 dark:text-orange-300">What to expect</p>
                             <p class="mt-3 text-sm leading-7 text-slate-700 dark:text-slate-200">
-                                This usually takes a few minutes. You do not need to stay on this page. Ghostfrog will update your inbox and send an email when the scan is ready.
+                                This usually takes a few minutes. You do not need to stay on this page. Fuzzynode will update your inbox and send an email when the scan is ready.
                             </p>
                         </div>
                     </div>

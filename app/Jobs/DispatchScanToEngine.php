@@ -103,6 +103,6 @@ class DispatchScanToEngine implements ShouldQueue
             'or broaden the keyword slightly',
         ])->filter()->implode(', ');
 
-        return 'Ghostfrog could not find enough active eBay listings for this exact scan. '.$contextHints.'. Your reserved credit has been refunded automatically.';
+        return 'Fuzzynode could not find enough active eBay listings for this exact scan. '.$contextHints.'. Your reserved credit has been refunded automatically.';
     }
 }

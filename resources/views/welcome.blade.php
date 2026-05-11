@@ -5,18 +5,18 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>Ghostfrog Ebay Edge | Find eBay Listing Gaps Faster</title>
-        <meta name="description" content="Ghostfrog Ebay Edge helps eBay sellers scan a niche, compare competitor listings, and spot the missing attributes and actions that improve listing quality.">
+        <title>Fuzzynode Ebay Edge | Find eBay Listing Gaps Faster</title>
+        <meta name="description" content="Fuzzynode Ebay Edge helps eBay sellers scan a niche, compare competitor listings, and spot the missing attributes and actions that improve listing quality.">
         <meta name="robots" content="index,follow">
         <link rel="canonical" href="{{ route('home') }}">
         <link rel="icon" type="image/svg+xml" href="{{ asset('favicon.svg') }}">
         <meta property="og:type" content="website">
-        <meta property="og:title" content="Ghostfrog Ebay Edge | Find eBay Listing Gaps Faster">
+        <meta property="og:title" content="Fuzzynode Ebay Edge | Find eBay Listing Gaps Faster">
         <meta property="og:description" content="Scan an eBay niche, compare competitor listings, and turn the evidence into practical listing actions.">
         <meta property="og:url" content="{{ route('home') }}">
-        <meta property="og:site_name" content="{{ config('app.name', 'Ghostfrog Ebay Edge') }}">
+        <meta property="og:site_name" content="{{ config('app.name', 'Fuzzynode Ebay Edge') }}">
         <meta name="twitter:card" content="summary">
-        <meta name="twitter:title" content="Ghostfrog Ebay Edge | Find eBay Listing Gaps Faster">
+        <meta name="twitter:title" content="Fuzzynode Ebay Edge | Find eBay Listing Gaps Faster">
         <meta name="twitter:description" content="Scan an eBay niche, compare competitor listings, and turn the evidence into practical listing actions.">
 
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -53,10 +53,10 @@
             {
                 "@@context": "https://schema.org",
                 "@@type": "SoftwareApplication",
-                "name": "Ghostfrog Ebay Edge",
+                "name": "Fuzzynode Ebay Edge",
                 "applicationCategory": "BusinessApplication",
                 "operatingSystem": "Web",
-                "description": "Ghostfrog Ebay Edge helps eBay sellers scan a niche, compare competitor listings, and identify missing attributes and listing opportunities.",
+                "description": "Fuzzynode Ebay Edge helps eBay sellers scan a niche, compare competitor listings, and identify missing attributes and listing opportunities.",
                 "url": "{{ route('home') }}",
                 "offers": {
                     "@@type": "Offer",
@@ -108,7 +108,7 @@
                             Find the listing gaps your competitors keep missing.
                         </h1>
                         <p class="mt-6 max-w-2xl text-lg leading-8 text-slate-600 dark:text-slate-300">
-                            Ghostfrog Ebay Edge scans a niche, compares competitor listings, and turns that evidence into a clear report with missing attributes, weak spots, and practical next actions.
+                            Fuzzynode Ebay Edge scans a niche, compares competitor listings, and turns that evidence into a clear report with missing attributes, weak spots, and practical next actions.
                         </p>
 
                         <div class="mt-8 flex flex-wrap items-center gap-4">
@@ -152,7 +152,7 @@
                                 <p class="text-sm font-semibold uppercase tracking-[0.3em] text-orange-600 dark:text-orange-300">Example scan</p>
                                 <h2 class="mt-4 text-3xl font-semibold text-slate-900 dark:text-white">lego castle byers</h2>
                                 <p class="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">
-                                    Python gathers marketplace evidence, structured code compares attributes, and the LLM highlights the gaps worth acting on.
+                                    Fuzzynode gathers live marketplace evidence, compares competitor signals, and surfaces the gaps most worth acting on.
                                 </p>
 
                                 <div class="mt-6 space-y-3">
@@ -173,12 +173,12 @@
 
                             <div class="mt-5 grid gap-4 sm:grid-cols-2">
                                 <div class="rounded-[1.5rem] bg-slate-50 p-5 dark:bg-slate-800">
-                                    <p class="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400">Laravel side</p>
-                                    <p class="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">Teams, credits, scan intake, report pages, billing, and product UI.</p>
+                                    <p class="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400">Customer workspace</p>
+                                    <p class="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">Accounts, credits, billing, scan intake, and the report experience all live here.</p>
                                 </div>
                                 <div class="rounded-[1.5rem] bg-orange-50 p-5 dark:bg-orange-500/10">
-                                    <p class="text-sm font-semibold uppercase tracking-[0.2em] text-orange-700 dark:text-orange-300">Python brain</p>
-                                    <p class="mt-3 text-sm leading-7 text-slate-700 dark:text-slate-200">Search, evidence gathering, comparison logic, and LLM-driven prioritization.</p>
+                                    <p class="text-sm font-semibold uppercase tracking-[0.2em] text-orange-700 dark:text-orange-300">Proprietary analysis engine</p>
+                                    <p class="mt-3 text-sm leading-7 text-slate-700 dark:text-slate-200">Evidence gathering, competitive comparison, and priority ranking that turns raw listings into clear next actions.</p>
                                 </div>
                             </div>
                         </div>

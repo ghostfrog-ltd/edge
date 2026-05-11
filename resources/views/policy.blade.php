@@ -1,6 +1,6 @@
 <x-guest-layout
-    title="Privacy Policy | Ghostfrog Ebay Edge"
-    meta-description="Read the privacy policy for Ghostfrog Ebay Edge."
+    title="Privacy Policy | Fuzzynode Ebay Edge"
+    meta-description="Read the privacy policy for Fuzzynode Ebay Edge."
     meta-robots="noindex,follow"
 >
     <div class="bg-gray-100 pt-4 dark:bg-slate-950">

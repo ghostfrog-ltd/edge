@@ -10,21 +10,21 @@ class BriefController extends Controller
     {
         return view('brief', [
             'brief' => [
-                'mission' => 'Build a reusable SaaS factory where Laravel handles the business chassis and Python handles the agentic analysis.',
-                'product' => 'Ghostfrog Ebay Edge is the first product: an eBay niche gap finder that shows sellers the missing attributes, weak competitor signals, and next listing moves.',
+                'mission' => 'Build a reusable SaaS studio where a strong customer workspace meets a proprietary market-intelligence engine.',
+                'product' => 'Fuzzynode Ebay Edge is the first product: an eBay niche gap finder that shows sellers the missing attributes, weak competitor signals, and next listing moves.',
                 'businessModel' => 'Hybrid pricing with a monthly subscription, team access, and scan credits that are reserved at queue time and finalized after successful analysis.',
-                'pythonBrain' => 'The Python brain takes a queued niche or keyword scan, searches eBay for relevant listings, gathers competitor evidence, compares strong and weak listing attributes, identifies missing fields and opportunities, and writes back a structured report for Laravel to show. The current input is a keyword or niche search, not a seller username scan.',
-                'pythonBrainHow' => 'The brain is likely a mix of normal Python code and LLM reasoning. Regular code fetches listings, cleans the data, groups attributes, and compares competitors. The LLM then looks at that structured evidence and decides which gaps matter most, what patterns are important, and what actions the seller should take next.',
+                'pythonBrain' => 'The Fuzzynode analysis engine takes a queued niche or keyword scan, searches eBay for relevant listings, gathers competitor evidence, compares strong and weak listing attributes, identifies missing fields and opportunities, and turns that into a structured report the customer can act on. The current input is a keyword or niche search, not a seller username scan.',
+                'pythonBrainHow' => 'Under the hood, Fuzzynode combines live marketplace evidence, structured comparison logic, and ranking intelligence to decide which gaps matter most, what patterns stand out, and what actions the seller should take next.',
                 'creditValue' => 'One credit is used for one successful scan. In return, the user gets a gap report with the missing attributes to add, competitor weaknesses worth exploiting, and practical listing actions to try next.',
             ],
             'pillars' => [
                 [
-                    'title' => 'Laravel chassis',
-                    'description' => 'Auth, teams, credits, billing, dashboards, scan intake, and report delivery all live here.',
+                    'title' => 'Customer workspace',
+                    'description' => 'Accounts, teams, credits, billing, scan intake, dashboards, and report delivery all live here.',
                 ],
                 [
-                    'title' => 'Python brain',
-                    'description' => 'FastAPI, LangGraph orchestration, and long-running analysis workers process the actual market intelligence and turn queued scans into report data.',
+                    'title' => 'Proprietary analysis engine',
+                    'description' => 'Fuzzynode processes the actual market intelligence, compares listing signals, and turns queued scans into ranked report data.',
                 ],
                 [
                     'title' => 'Low-liability positioning',
@@ -106,7 +106,7 @@ class BriefController extends Controller
             'brainSteps' => [
                 [
                     'title' => 'Step 1: Live listing evidence collection',
-                    'detail' => 'The brain fetches the first 50 relevant active eBay listings for the keyword or niche, constrained by marketplace and sharpened by the optional category ID and competitor store URL when provided.',
+                    'detail' => 'The analysis engine fetches the first 50 relevant active eBay listings for the keyword or niche, constrained by marketplace and sharpened by the optional category ID and competitor store URL when provided.',
                 ],
                 [
                     'title' => 'Step 2: Schema audit',
@@ -163,8 +163,8 @@ class BriefController extends Controller
                     'complete' => true,
                 ],
                 [
-                    'title' => 'Python brain pipeline',
-                    'detail' => 'The Ghostfrog engine now runs the v1 loop end to end: live eBay evidence, schema audit, buyer-friction intelligence, The Missing 3 synthesis, LLM-backed ranking, notifications, PDF delivery, and worker monitoring.',
+                    'title' => 'Analysis engine pipeline',
+                    'detail' => 'The Fuzzynode engine now runs the v1 loop end to end: live eBay evidence, schema audit, buyer-friction intelligence, The Missing 3 synthesis, ranking intelligence, notifications, PDF delivery, and worker monitoring.',
                     'complete' => true,
                     'subtasks' => [
                         [
@@ -192,7 +192,7 @@ class BriefController extends Controller
                             'complete' => true,
                         ],
                         [
-                            'title' => 'LLM-driven gap analysis and ranking',
+                            'title' => 'Gap analysis and ranking intelligence',
                             'complete' => true,
                         ],
                         [

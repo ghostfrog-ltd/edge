@@ -1,6 +1,6 @@
 <x-guest-layout
-    title="Terms and Conditions | Ghostfrog Ebay Edge"
-    meta-description="Read the terms and conditions for Ghostfrog Ebay Edge."
+    title="Terms and Conditions | Fuzzynode Ebay Edge"
+    meta-description="Read the terms and conditions for Fuzzynode Ebay Edge."
     meta-robots="noindex,follow"
 >
     <div class="bg-gray-100 pt-4 dark:bg-slate-950">

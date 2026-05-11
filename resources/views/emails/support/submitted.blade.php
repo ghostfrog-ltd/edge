@@ -1,5 +1,5 @@
 <div style="font-family: Arial, sans-serif; color: #0f172a; line-height: 1.6;">
-    <h1 style="font-size: 20px; margin-bottom: 16px;">New Ghostfrog support ticket</h1>
+    <h1 style="font-size: 20px; margin-bottom: 16px;">New Fuzzynode support ticket</h1>
 
     <p style="margin: 0 0 12px;"><strong>Reference:</strong> {{ $ticket->reference }}</p>
     <p style="margin: 0 0 12px;"><strong>From:</strong> {{ $ticket->name }} ({{ $ticket->email }})</p>

@@ -1,6 +1,6 @@
-# Ghostfrog Ebay Edge
+# Fuzzynode Ebay Edge
 
-Ghostfrog Ebay Edge is a SaaS product for eBay sellers. It scans a keyword or niche, compares competitor listings, and returns a report showing missing attributes, weak spots, and practical actions.
+Fuzzynode Ebay Edge is a SaaS product for eBay sellers. It scans a keyword or niche, compares competitor listings, and returns a report showing missing attributes, weak spots, and practical actions.
 
 ## Public pages
 
@@ -19,7 +19,7 @@ Ghostfrog Ebay Edge is a SaaS product for eBay sellers. It scans a keyword or ni
 
 ## Audience
 
-Ghostfrog Ebay Edge is built for eBay sellers who want clearer listing intelligence before rewriting titles, item specifics, and offer positioning.
+Fuzzynode Ebay Edge is built for eBay sellers who want clearer listing intelligence before rewriting titles, item specifics, and offer positioning.
 
 ## Contact
 

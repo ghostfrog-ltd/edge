@@ -58,7 +58,7 @@ class CreateNewUser implements CreatesNewUsers
             'user_id' => $user->id,
             'type' => 'starter_grant',
             'amount' => 50,
-            'description' => 'Starter credits for a new Ghostfrog workspace.',
+            'description' => 'Starter credits for a new Fuzzynode workspace.',
         ]);
     }
 }

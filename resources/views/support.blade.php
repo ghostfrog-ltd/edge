@@ -1,6 +1,6 @@
 <x-guest-layout
-    title="Help & Support | Ghostfrog Ebay Edge"
-    meta-description="Get help with Ghostfrog Ebay Edge billing, account access, scan reports, and feature requests through the built-in support form."
+    title="Help & Support | Fuzzynode Ebay Edge"
+    meta-description="Get help with Fuzzynode Ebay Edge billing, account access, scan reports, and feature requests through the built-in support form."
 >
     <div class="min-h-screen bg-slate-100 dark:bg-slate-950">
         <div class="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">

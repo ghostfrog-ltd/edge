@@ -1,6 +1,6 @@
 @props([
-    'title' => config('app.name', 'Ghostfrog Ebay Edge'),
-    'metaDescription' => 'Ghostfrog Ebay Edge helps eBay sellers scan a niche, compare competitor listings, and identify the gaps that matter.',
+    'title' => config('app.name', 'Fuzzynode Ebay Edge'),
+    'metaDescription' => 'Fuzzynode Ebay Edge helps eBay sellers scan a niche, compare competitor listings, and identify the gaps that matter.',
     'metaRobots' => 'index,follow',
     'canonical' => null,
     'ogType' => 'website',
@@ -26,7 +26,7 @@
         <meta property="og:title" content="{{ $pageTitle }}">
         <meta property="og:description" content="{{ $metaDescription }}">
         <meta property="og:url" content="{{ $canonical }}">
-        <meta property="og:site_name" content="{{ config('app.name', 'Ghostfrog Ebay Edge') }}">
+        <meta property="og:site_name" content="{{ config('app.name', 'Fuzzynode Ebay Edge') }}">
         <meta name="twitter:card" content="summary">
         <meta name="twitter:title" content="{{ $pageTitle }}">
         <meta name="twitter:description" content="{{ $metaDescription }}">

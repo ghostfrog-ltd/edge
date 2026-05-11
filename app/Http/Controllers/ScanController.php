@@ -106,7 +106,7 @@ class ScanController extends Controller
 
         return redirect()
             ->route('scans.submitted', $scan)
-            ->with('status', 'Scan queued. Ghostfrog is building your report now.');
+            ->with('status', 'Scan queued. Fuzzynode is building your report now.');
     }
 
     public function submitted(Request $request, Scan $scan): View|RedirectResponse
@@ -194,7 +194,7 @@ class ScanController extends Controller
 
         return redirect()
             ->route('scans.submitted', $scan)
-            ->with('status', 'Scan retried. Ghostfrog is rebuilding the report now.');
+            ->with('status', 'Scan retried. Fuzzynode is rebuilding your report now.');
     }
 
     public function feedback(Request $request, Scan $scan): RedirectResponse
@@ -230,6 +230,6 @@ class ScanController extends Controller
 
         return redirect()
             ->route('scans.show', $scan)
-            ->with('status', 'Thanks. Your report feedback has been saved for the Ghostfrog quality loop.');
+            ->with('status', 'Thanks. Your report feedback has been saved for the Fuzzynode quality loop.');
     }
 }

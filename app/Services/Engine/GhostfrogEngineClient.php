@@ -14,7 +14,7 @@ class GhostfrogEngineClient
         $baseUrl = rtrim((string) config('services.ghostfrog_engine.url'), '/');
 
         if ($baseUrl === '') {
-            throw new RuntimeException('Ghostfrog engine URL is not configured.');
+            throw new RuntimeException('Fuzzynode engine URL is not configured.');
         }
 
         $response = $this->request()
@@ -38,7 +38,7 @@ class GhostfrogEngineClient
             ->json();
 
         if (! data_get($response, 'engine_job_id')) {
-            throw new RuntimeException('Ghostfrog engine did not return an engine job id.');
+            throw new RuntimeException('Fuzzynode engine did not return an engine job id.');
         }
 
         return $response;

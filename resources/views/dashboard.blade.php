@@ -2,7 +2,7 @@
     <x-slot name="header">
         <div class="flex items-center justify-between gap-4">
             <div>
-                <p class="text-xs font-semibold uppercase tracking-[0.3em] text-orange-600 dark:text-orange-300">Ghostfrog Ebay Edge</p>
+                <p class="text-xs font-semibold uppercase tracking-[0.3em] text-orange-600 dark:text-orange-300">Fuzzynode Ebay Edge</p>
                 <h2 class="mt-5 text-2xl font-semibold leading-tight text-slate-900 dark:text-white">
                     {{ $team->name }}
                 </h2>
@@ -44,7 +44,7 @@
                         <div class="rounded-[1.5rem] border border-slate-200 bg-slate-50 p-5 dark:border-white/10 dark:bg-white/5">
                             <p class="text-sm text-slate-600 dark:text-slate-300">Queued or running</p>
                             <p class="mt-3 text-4xl font-semibold text-slate-900 dark:text-white">{{ $scanCounts['queued'] }}</p>
-                            <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">This is the handoff lane for the future Python brain.</p>
+                            <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">This is the handoff lane for the analysis engine and completed report workflow.</p>
                         </div>
                         <div class="rounded-[1.5rem] border border-slate-200 bg-slate-50 p-5 dark:border-white/10 dark:bg-white/5">
                             <p class="text-sm text-slate-600 dark:text-slate-300">Completed scans</p>

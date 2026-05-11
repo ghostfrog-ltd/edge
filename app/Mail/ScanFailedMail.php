@@ -22,7 +22,7 @@ class ScanFailedMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Your Ghostfrog scan failed: '.$this->scan->keyword,
+            subject: 'Your Fuzzynode scan failed: '.$this->scan->keyword,
         );
     }
 

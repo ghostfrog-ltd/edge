@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Ghostfrog Edge Report</title>
+    <title>Fuzzynode Edge Report</title>
     <style>
         @page {
             margin: 28px;
@@ -147,9 +147,9 @@
     </style>
 </head>
 <body>
-    <p class="eyebrow">Ghostfrog Ebay Edge</p>
+    <p class="eyebrow">Fuzzynode Ebay Edge</p>
     <h1 class="page-title">{{ $scan->keyword }}</h1>
-    <p class="lede">Downloadable eBay edge report generated from Ghostfrog's live evidence, schema audit, voice-of-customer signals, and gap analysis.</p>
+    <p class="lede">Downloadable eBay edge report generated from Fuzzynode's live evidence, schema audit, voice-of-customer signals, and gap analysis.</p>
 
     <table class="meta">
         <tr>

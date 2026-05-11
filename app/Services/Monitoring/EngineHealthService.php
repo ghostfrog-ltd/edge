@@ -15,7 +15,7 @@ class EngineHealthService
             return [
                 'reachable' => false,
                 'status' => 'not_configured',
-                'error' => 'Ghostfrog engine URL is not configured.',
+                'error' => 'Fuzzynode engine URL is not configured.',
             ];
         }
 

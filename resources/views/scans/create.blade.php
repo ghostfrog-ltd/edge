@@ -66,7 +66,7 @@
                         <div>
                             <x-label for="competitor_store_url" value="Competitor store URL (optional)" />
                             <x-input id="competitor_store_url" name="competitor_store_url" type="url" class="mt-2 block w-full" :value="old('competitor_store_url')" placeholder="https://www.ebay.co.uk/str/rival-parts-store" />
-                            <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">Add this if you want the brain to compare your niche against a known rival store.</p>
+                            <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">Add this if you want the analysis engine to compare your niche against a known rival store.</p>
                             <x-input-error for="competitor_store_url" class="mt-2" />
                         </div>
 

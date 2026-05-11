@@ -60,7 +60,7 @@
                                     This plan includes <span class="font-semibold">{{ $activePlan['credits_label'] }}</span>.
                                 @endif
                             @else
-                                This workspace is still running on starter grant credits and one-off reservations. Pick a plan to turn Ghostfrog into a paid, reusable system.
+                                This workspace is still running on starter grant credits and one-off reservations. Pick a plan to turn Fuzzynode into a paid, reusable system.
                             @endif
                         </p>
                     </div>

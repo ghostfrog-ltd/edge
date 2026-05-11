@@ -1,6 +1,6 @@
 <x-guest-layout
-    title="How Ghostfrog Works | Ghostfrog Ebay Edge"
-    meta-description="Learn how Ghostfrog Ebay Edge works, what one scan credit buys, how the Python brain and LLM reasoning fit together, and what is on the roadmap."
+    title="How Fuzzynode Works | Fuzzynode Ebay Edge"
+    meta-description="Learn how Fuzzynode Ebay Edge works, what one scan credit buys, how the analysis engine produces its recommendations, and what is on the roadmap."
 >
     <div class="bg-slate-100 py-10 dark:bg-slate-950">
         <div class="mx-auto max-w-7xl space-y-6 sm:px-6 lg:px-8">
@@ -9,7 +9,7 @@
                     <div>
                         <p class="text-xs font-semibold uppercase tracking-[0.3em] text-orange-600 dark:text-orange-300">How it works</p>
                         <h2 class="mt-5 text-2xl font-semibold leading-tight text-slate-900 dark:text-white">
-                            How Ghostfrog works
+                            How Fuzzynode works
                         </h2>
                     </div>
                     @auth
@@ -27,7 +27,7 @@
             <section class="grid gap-6 lg:grid-cols-[1.4fr_0.9fr]">
                 <div class="rounded-[2rem] border border-slate-200 bg-white p-8 text-slate-900 shadow-sm dark:border-slate-800 dark:bg-slate-950 dark:text-white dark:shadow-xl">
                     <p class="text-sm font-semibold uppercase tracking-[0.3em] text-orange-600 dark:text-orange-300">Mission</p>
-                    <h3 class="mt-4 text-3xl font-semibold leading-tight text-slate-900 dark:text-white">Ghostfrog SaaS Factory</h3>
+                    <h3 class="mt-4 text-3xl font-semibold leading-tight text-slate-900 dark:text-white">Fuzzynode Product Studio</h3>
                     <p class="mt-6 max-w-3xl text-base leading-8 text-slate-600 dark:text-slate-300">{{ $brief['mission'] }}</p>
                     <p class="mt-4 max-w-3xl text-base leading-8 text-slate-600 dark:text-slate-300">{{ $brief['product'] }}</p>
                 </div>
@@ -57,7 +57,7 @@
 
             <section class="grid gap-6 lg:grid-cols-2">
                 <article class="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm dark:border-slate-800 dark:bg-slate-900">
-                    <p class="text-sm font-semibold uppercase tracking-[0.3em] text-slate-500">What the Python brain does</p>
+                    <p class="text-sm font-semibold uppercase tracking-[0.3em] text-slate-500">What the analysis engine does</p>
                     <p class="mt-4 text-base leading-8 text-slate-600 dark:text-slate-300">{{ $brief['pythonBrain'] }}</p>
                 </article>
 
@@ -68,12 +68,12 @@
             </section>
 
             <section class="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm dark:border-slate-800 dark:bg-slate-900">
-                <p class="text-sm font-semibold uppercase tracking-[0.3em] text-slate-500">How the brain works</p>
+                <p class="text-sm font-semibold uppercase tracking-[0.3em] text-slate-500">How the analysis engine works</p>
                 <p class="mt-4 max-w-5xl text-base leading-8 text-slate-600 dark:text-slate-300">{{ $brief['pythonBrainHow'] }}</p>
             </section>
 
             <section class="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm dark:border-slate-800 dark:bg-slate-900">
-                <p class="text-sm font-semibold uppercase tracking-[0.3em] text-slate-500">Brain workflow</p>
+                <p class="text-sm font-semibold uppercase tracking-[0.3em] text-slate-500">Analysis workflow</p>
                 <h3 class="mt-2 text-2xl font-semibold text-slate-900 dark:text-white">Step 1 / Step 2 / Step 3 / Step 4</h3>
 
                 <div class="mt-6 grid gap-4 lg:grid-cols-3">

@@ -13,7 +13,7 @@
         <div class="mx-auto max-w-6xl space-y-6 sm:px-6 lg:px-8">
             <section class="rounded-[2rem] border border-orange-200 bg-orange-50 p-6 shadow-sm dark:border-orange-500/30 dark:bg-orange-500/10">
                 <p class="text-sm leading-7 text-orange-900 dark:text-orange-100">
-                    Products are separate Ghostfrog tools. Pricing tiers like <span class="font-semibold">Free</span>, <span class="font-semibold">Starter</span>, and <span class="font-semibold">Pro</span> live on the admin plans page instead.
+                    Products are separate Fuzzynode tools. Pricing tiers like <span class="font-semibold">Free</span>, <span class="font-semibold">Starter</span>, and <span class="font-semibold">Pro</span> live on the admin plans page instead.
                 </p>
             </section>
 

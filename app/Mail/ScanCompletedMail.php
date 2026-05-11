@@ -22,7 +22,7 @@ class ScanCompletedMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Your Ghostfrog scan is ready: '.$this->scan->keyword,
+            subject: 'Your Fuzzynode scan is ready: '.$this->scan->keyword,
         );
     }
 
